@@ -3,6 +3,7 @@ let img;
 let sparkOrigin;
 let sparks = [];
 let sparksNumber = 30;
+let startTime = millis();
 
 function setup() {
   createCanvas(400, 268);
@@ -15,9 +16,15 @@ function setup() {
   for(let i = 0; i < sparksNumber; i ++){
     sparks.push(createSpark(sparkOrigin.x, sparkOrigin.y));
   }
+
+  noLoop();
+  setTimeout(loop, 2000);
 }
 
 function draw() {
+
+
+
   background(img);
 
   sparks.forEach(s => {
@@ -48,5 +55,3 @@ function createSpark(x, y){
 
   return spark;
 }
-
-
